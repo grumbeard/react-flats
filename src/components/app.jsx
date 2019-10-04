@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FlatList from './flat_list';
 import flats from '../../data/flats';
+import SimpleMap from './simple_map';
 
 class App extends Component {
   constructor(props) {
@@ -10,10 +11,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(flats);
     return (
       <div>
         <FlatList flats={flats} />
+        <div className="map-container">
+          <SimpleMap />
+        </div>
       </div>
     );
   }
