@@ -7,6 +7,13 @@ class Flat extends Component {
     this.state = {};
   }
 
+  handleClick = (event) => {
+    this.props.selectFlatFunction({
+      lat: this.props.lat,
+      lng: this.props.lng
+    });
+  }
+
   render() {
     const src = `https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/images/flat3.jpg`;
     const backgroundStyle = {
@@ -14,7 +21,7 @@ class Flat extends Component {
     };
 
     return (
-      <div className="card" style={backgroundStyle}>
+      <div className="card" style={backgroundStyle} onClick={this.handleClick}>
         <div className="card-category">{this.props.price} {this.props.currency}</div>
         <div className="card-description">
           <h2>{this.props.name}</h2>
